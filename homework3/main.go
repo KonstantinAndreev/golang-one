@@ -4,12 +4,9 @@ import (
 	"fmt"
 	"math"
 	"math/big"
-	_ "math/big"
 )
 
 func main() {
-	var fact = new(big.Int)
-
 	fmt.Println("Введите первое число")
 	var a float64
 
@@ -28,20 +25,21 @@ func main() {
 	switch operation {
 
 	case "+":
-		fmt.Println(a + b)
+		fmt.Printf("%.2f\n", a+b)
 	case "-":
-		fmt.Println(a - b)
+		fmt.Printf("%.2f\n", a-b)
 	case "*":
-		fmt.Println(a * b)
+		fmt.Printf("%.2f\n", a*b)
 	case "/":
 		if b == 0 {
 			fmt.Println("Ошибка деления на ноль")
 		} else {
-			fmt.Println(a / b)
+			fmt.Printf("%.2f\n", a/b)
 		}
 	case "^":
-		fmt.Println(math.Pow(a, b))
+		fmt.Printf("%.2f\n", math.Pow(a, b))
 	case "!":
+		var fact = new(big.Int)
 		if b != 0 {
 			fmt.Println("Ошибка,для вычисления факториала" +
 				" введите только первое число!")
