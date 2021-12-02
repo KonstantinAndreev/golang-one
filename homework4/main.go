@@ -1,38 +1,28 @@
 package main
 
 import (
-	"fmt"
+	fmt "fmt"
 )
 
 func main() {
-
-	fmt.Println("Введите первое число")
-	var a int
-	fmt.Scanln(&a)
-
-	fmt.Println("Введите второе число")
-	var b int
-	fmt.Scanln(&b)
-
-	fmt.Println("Введите третье число")
-	var c int
-	fmt.Scanln(&c)
-
-	fmt.Println("Введите четвертое число")
-	var d int
-	fmt.Scanln(&d)
-
-	sls := []int{a, b, c, d}
-	InsertionSort(sls)
-	fmt.Println(sls)
+	ar1 := make([]int, 5)
+	for i := 0; i < 5; i++ {
+		var a int
+		fmt.Println("Введите число:")
+		fmt.Scanln(&a)
+		ar1[i] = a
+	}
+	InsertionSort(ar1)
+	fmt.Println("Результат сортировки:\n", ar1)
 }
-func InsertionSort(sls []int) {
-	for i := 1; i < len(sls); i++ {
-		x := sls[i]
+
+func InsertionSort(ar1 []int) {
+	for i := 1; i < len(ar1); i++ {
+		x := ar1[i]
 		j := i
-		for ; j >= 1 && sls[j-1] > x; j-- {
-			sls[j] = sls[j-1]
+		for ; j >= 1 && ar1[j-1] > x; j-- {
+			ar1[j] = ar1[j-1]
 		}
-		sls[j] = x
+		ar1[j] = x
 	}
 }
