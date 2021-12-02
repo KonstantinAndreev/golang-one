@@ -12,11 +12,6 @@ func main() {
 		fmt.Scanln(&a)
 		ar1[i] = a
 	}
-	InsertionSort(ar1)
-	fmt.Println("Результат сортировки:\n", ar1)
-}
-
-func InsertionSort(ar1 []int) {
 	for i := 1; i < len(ar1); i++ {
 		x := ar1[i]
 		j := i
@@ -25,4 +20,5 @@ func InsertionSort(ar1 []int) {
 		}
 		ar1[j] = x
 	}
+	fmt.Println("Результат сортировки:\n", ar1)
 }
